@@ -22,3 +22,4 @@ node_modules/
 *.log
 *.sql
 *.sqlite
+docker-compose.override.yml
