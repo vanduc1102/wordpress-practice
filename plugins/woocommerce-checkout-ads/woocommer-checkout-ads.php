@@ -117,13 +117,13 @@ function my_custom_checkout_field($checkout)
 	echo '</div>';
 }
 
-add_action('admin_menu', 'test_plugin_setup_menu');
+add_action('admin_menu', 'woocommerce_checkout_ads_admin_menu');
 
-function test_plugin_setup_menu(){
-    add_menu_page( 'WooCommerce Checkout Ads Page', 'Checkout Ads', 'manage_options', 'test-plugin', 'test_init' );
+function woocommerce_checkout_ads_admin_menu(){
+    add_menu_page( 'WooCommerce Checkout Ads Page', 'Checkout Ads', 'manage_options', 'woocommerce-checkout-ads', 'show_woocommerce_checkout_ads_admin_menu' );
 }
 
-function test_init(){
+function show_woocommerce_checkout_ads_admin_menu(){
 	$current_user = wp_get_current_user();
 
 	printf( __( 'Username: %s', 'textdomain' ), esc_html( $current_user->user_login ) ) . '<br />';
