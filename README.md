@@ -10,16 +10,15 @@ Wordpress practice plugins, themes ... all things belongs to Wordpress are parke
 docker-compose up
 ```
 
-Wordpress site will be available at http://localhost:8080
-and http://localhost:8081 is for PhpMyAdmin
+Wordpress site will be available at http://localhost:8080 and http://localhost:8081 is for PhpMyAdmin
 
 
-Wipe out volume (Reset database)
+Wipe out volumes (Reset database)
 
 ```
 docker-compose down -v
 ```
 
-## Add new a theme or plugin
+## Add a new theme or plugin
 
 Add more a new entry volume to `docker-compose.override.yaml`
