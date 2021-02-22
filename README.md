@@ -21,4 +21,4 @@ docker-compose down -v
 
 ## Add a new theme or plugin
 
-Add more a new entry volume to `docker-compose.override.yaml`
+Add a new entry to volume to `docker-compose.override.yaml`
