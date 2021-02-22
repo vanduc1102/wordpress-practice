@@ -1,6 +1,8 @@
 version: '3.1'
 services:
   wordpress:
+    environment:
+      - WORDPRESS_DEBUG:1
     volumes:
       - ./themes/glass-eye-creative/:/var/www/html/wp-content/themes/glass-eye-creative/
       - ./plugins/example-plugin/:/var/www/html/wp-content/plugins/example-plugin/
