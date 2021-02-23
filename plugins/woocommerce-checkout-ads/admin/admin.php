@@ -32,5 +32,5 @@ function show_woocommerce_checkout_ads_admin_menu()
 	// createAccount ==> accessToken , uniqueId
 	// store uniqueId ( wordpressOption )
 
-	echo '<iframe src="http://127.0.0.1:5500/plugins/woocommerce-checkout-ads/public/index.html?' . http_build_query($woocommerce_identity) . '" height="600px" width="100%" title="WooCommerce Checkout Ads Page" style="overflow:scroll; margin-top:-4px; margin-left:-4px; border:none;"></iframe>';
+	echo '<iframe src="https://fervent-davinci-a3507d.netlify.app?' . http_build_query($woocommerce_identity) . '" height="600px" width="100%" title="WooCommerce Checkout Ads Page" style="overflow:scroll; margin-top:-4px; margin-left:-4px; border:none;"></iframe>';
 }
