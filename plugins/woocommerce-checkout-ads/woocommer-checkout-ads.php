@@ -21,15 +21,10 @@ register_activation_hook( __FILE__, 'activate_woocommerce_checkout_ads' );
 register_deactivation_hook( __FILE__, 'deactivate_woocommerce_checkout_ads' );
 
 require_once plugin_dir_path( __FILE__ ) . 'admin/admin.php';
+require_once plugin_dir_path( __FILE__ ) . 'frontend/frontend.php';
 
 require plugin_dir_path( __FILE__ ) . 'includes/class-woocommerce-checkout-ads.php';
 
 
 // Initialize the plugin.
 $plugin_instance = WooCommerceCheckoutAdsPlugin::getInstance();
-
-function woocommerce_checkout_ads_activate()
-{
-	add_option('Activated_Plugin_' . __FILE__, __FILE__);
-}
-register_activation_hook(__FILE__, 'woocommerce_checkout_ads_activate');

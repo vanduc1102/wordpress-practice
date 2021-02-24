@@ -73,28 +73,34 @@ function Copyright() {
     </Typography>
   );
 }
- // MOCK Rokt Admin
+
 function App() {
-  // Rokt - accessToken
-  // getInformation......
+
   let queryString = getQueryString();
   let wooCommerceIdentity = queryString ? parseQuery(queryString) : null;
+  if (!wooCommerceIdentity) {
+    return (
+      <Typography>Only work in Iframe</Typography>
+    )
+  }
+
+  let shopUrl = wooCommerceIdentity['woocommerce_site_url'];
 
   return (
     <Container maxWidth="sm">
       <div style={{ marginTop: 24 }}>
         <Typography variant="h4" component="h1" gutterBottom>
           Welcome to WooCommerce Checkout Ads
-				</Typography>
+        </Typography>
         {
-            wooCommerceIdentity &&
-            (
+          wooCommerceIdentity &&
+          (
             <div>
-              <Typography>Site_Url: {wooCommerceIdentity['woocommerce_site_url']} </Typography>
+              <Typography>Site_Url: {shopUrl} </Typography>
               <Typography>User_Email: {wooCommerceIdentity['woocommerce_user_email']} </Typography>
               <Typography>User_Dipslay_Name: {wooCommerceIdentity['woocommerce_user_display_name']}</Typography>
             </div>
-            )
+          )
         }
         <Typography gutterBottom>
           Your local time is: <strong>{new Date().toLocaleString()}</strong>
@@ -106,7 +112,7 @@ function App() {
   );
 }
 
-function getQueryString(){
+function getQueryString() {
   return window.location.href.split("?")[1];
 }
 
@@ -114,8 +120,8 @@ function parseQuery(queryString) {
   var query = {};
   var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
   for (var i = 0; i < pairs.length; i++) {
-      var pair = pairs[i].split('=');
-      query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+    var pair = pairs[i].split('=');
+    query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
   }
   return query;
 }
